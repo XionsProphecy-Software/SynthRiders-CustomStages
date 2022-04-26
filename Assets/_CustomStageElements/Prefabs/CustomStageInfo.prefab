@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2c61eb011946a46b4f568cdc27ee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageName: Experience Demo
-  Author: shogoki_vnz
-  ExperienceTag: EXPERIENCE-TEST
+  StageName: Default Template
+  Author: YourNameHere
+  ExperienceTag: 

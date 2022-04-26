@@ -2,7 +2,10 @@
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.XR;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CustomStageBundle : EditorWindow
 {
@@ -19,6 +22,7 @@ public class CustomStageBundle : EditorWindow
         window.titleContent = new GUIContent("Export Settings");
         window.position = new Rect(Screen.width / 2, Screen.height / 2, 500, 200);
         window.Show();
+
     }
 
     void OnGUI()
@@ -34,6 +38,8 @@ public class CustomStageBundle : EditorWindow
         if (GUILayout.Button("Export PC")) {
             if(BundleName == null || BundleName.Equals(string.Empty)) {
                 Debug.LogError("Please set the bundle name");
+                EditorUtility.DisplayDialog("Custom Stage Name Empty", "The Custom Stage name must not be empty", "Ok");
+
             } else {
                 Debug.Log($"Bundle Name set to {BundleName}");
 
@@ -60,6 +66,7 @@ public class CustomStageBundle : EditorWindow
         if (GUILayout.Button("Export Quest")) {
             if(BundleName == null || BundleName.Equals(string.Empty)) {
                 Debug.LogError("Please set the bundle name");
+                EditorUtility.DisplayDialog("Custom Stage Name Empty", "The Custom Stage name must not be empty", "Ok");
             } else {
                 Debug.Log($"Bundle Name set to {BundleName}");
 
@@ -68,17 +75,38 @@ public class CustomStageBundle : EditorWindow
                     extention = "spinstagequest";
                 }
                 string sanitizeBundleName = SanitizeString(BundleName);
+
                 AssetImporter.GetAtPath(AssetsPath).SetAssetBundleNameAndVariant($"{sanitizeBundleName}.{extention}", "");
                 string bundleExportPath = $"{Application.dataPath}/../{ExportPath}/{sanitizeBundleName}/";
 
-                if(!Directory.Exists(bundleExportPath))
+                //Check if Android Build support is install before exporting so that people
+                //do not get confused when it doesn't export when Android SDK isn't installed
+                //Debug.Log(BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Android, BuildTarget.Android));
+                if (BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Android, BuildTarget.Android) == true)
                 {
-                    Directory.CreateDirectory(bundleExportPath);
-                } 
-
-                BuildPipeline.BuildAssetBundles(bundleExportPath, BuildAssetBundleOptions.None, BuildTarget.Android);
-                EditorUtility.RevealInFinder($"{bundleExportPath}");
-                Debug.Log($"Export complete, to directory {bundleExportPath}");
+                    Debug.Log("Andriod is Supported meaning Android SDK is INSTALLED!");
+                    if (!Directory.Exists(bundleExportPath))
+                    {
+                        Directory.CreateDirectory(bundleExportPath);
+                    }
+                    try
+                    {
+                        BuildPipeline.BuildAssetBundles(bundleExportPath, BuildAssetBundleOptions.None, BuildTarget.Android);
+                        EditorUtility.RevealInFinder($"{bundleExportPath}");
+                        Debug.Log($"Export complete, to directory {bundleExportPath}");
+                    }
+                    catch (Exception E)
+                    {
+                        Debug.LogError("FAILED TO EXPORT! Caused by: " + E);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("ANDROID SDK NOT INSTALLED!");
+                    EditorUtility.DisplayDialog("EXPORT FAILED!", "Exporting to Quest failed because the Android SDK is not installed! Install it from Unity Hub and restart the editor to continue", "Ok");
+                }
+                
+                
                 this.Close();
             }             
         }
