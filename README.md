@@ -22,20 +22,20 @@ When the export is completed just copy the file with the .stage extension and pa
 
 All elements inside the _CustomStageElements folder will be exported, you can use all the non-code Assets (such as Models, Textures, Prefabs, Audio clips, etc), to build your custom stage.
 
-Please preserve the size of the Thumb and BG image elements, for the correct display in the game.
+Please preserve the size of the Thumb image elements, for the correct display in the game.
 
 Be aware that the names of the following items must not be changed:
 
-    * MenuItems/BG
     * MenuItems/Thumb
+    * Prefabs/Platform
     * Prefabs/StageTile01
     * Prefabs/StageTile02
     * Prefabs/StageTile03
-    * Prefabs/Platform
     * Skybox/CustomSkybox
     * Prefabs/SpinEmitter
+    * Prefabs/Timeline
 
-If you don't want to replace the default platform or default spin emitter, just delete o move the prefabs out of the _CustomStageElements folder
+If you don't want to replace the default platform or default spin emitter, just delete or move the prefabs out of the _CustomStageElements folder
 
 ## Versioning
 
