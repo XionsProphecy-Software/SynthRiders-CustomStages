@@ -53,15 +53,19 @@ If you want to link a Custom Experience to a Custom Beatmap, Change the "Experie
 ## FAQ
 
 * **"My Stage doesn't show up in game!"**
+
 While in game in the Song Select Menu, Look up and click the "Reload" icon and press "Find New". The game will look for your stage and add it to the list
 
 * **"My experience won't show up in the Stage Select menu!"**
+
 Experiences will **not** show up in the Stage Select menu if they have an Experience Tag. to access the experience, locate the beatmap it is attatched to, and click "Play". The game will prompt you if you would like to play the Experience for the selected song or not.
 
 * **"I Clicked play on my Beatmap but it didn't ask me if I wanted to play an Experience!"**
+
 Double Check that both your Experience File and your Beatmap have the same experience tag (See above). If they have matching experience tags, see First FAQ
 
 * **"My stage doesn't save scores, and has no walls while playing!"**
+
 The game is still treating your stage as an experience. Move/Delete the "Timeline" prefab and the "Main" timeline object from within _CustomStageElements
 
 
