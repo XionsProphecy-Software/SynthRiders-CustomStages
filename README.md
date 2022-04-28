@@ -24,7 +24,7 @@ When the export is completed just copy the file with the .stage/.spinstage/.stag
 
 
 
-All elements inside the _CustomStageElements folder will be exported, you can use all the non-code Assets (such as Models, Textures, Prefabs, Audio clips, etc), to build your custom stage._
+All elements inside the _CustomStageElements folder will be exported, you can use all the non-code Assets (such as Models, Textures, Prefabs, Audio clips, etc), to build your custom stage.
 
 Please preserve the size of the Thumb image elements, for the correct display in the game.
 
