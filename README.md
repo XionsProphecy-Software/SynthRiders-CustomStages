@@ -66,7 +66,7 @@ Double Check that both your Experience File and your Beatmap have the same exper
 
 * **"My stage doesn't save scores, and has no walls while playing!"**
 
-The game is still treating your stage as an experience. Move/Delete the "Timeline" prefab and the "Main" timeline object from within _CustomStageElements
+The game is still treating your stage as an experience. Move/Delete the "Timeline" prefab and the "Main" timeline object from within _CustomStageElements. Also make sure your Experience Tag section is blank
 
 
 ## Versioning
