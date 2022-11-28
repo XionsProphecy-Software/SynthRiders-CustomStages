@@ -16,28 +16,28 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - SingleTileReset
-  - TileResetBox
+  - HEADSET CAMERA ONLY
+  - THIRD PERSON CAMERA ONLY
   - 
   - 
   - 
   - 
+  - ControllerTrails
   - 
   - 
   - 
   - 
+  - Player Avatar
+  - 
+  - Notes
+  - 
+  - 
+  - Controller Indicators
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Obstacles
   - 
   m_SortingLayers:
   - name: Default

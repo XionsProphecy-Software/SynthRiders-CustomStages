@@ -8,9 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Currenlty supported on Unity 2019.4.21f1. It is recomended the installation of [Unity Hub](https://store.unity.com/download?ref=personal/) for the ease of management of multiple versions of Unity
+Currently supported on Unity 2019.4.21f1. It is recomended the installation of [Unity Hub](https://store.unity.com/download?ref=personal/) for the ease of management of multiple versions of Unity
 
-If you plan on making exporting for Quest 1 Quest 2, make sure your installation of Unity 2019.4.21f1 has "Android Build Support", "Android SDK & NDK Tools", and "OpenJDK" modules installed! you can check/install it using Unity Hub by going to "Installs>Unity 2019.4.21f1>Settings Gear>Add modules"
+If you plan on exporting for Quest 1 Quest 2, make sure your installation of Unity 2019.4.21f1 has "Android Build Support", "Android SDK & NDK Tools", and "OpenJDK" modules installed! you can check/install it using Unity Hub by going to "Installs>Unity 2019.4.21f1>Settings Gear>Add modules"
 
 ### Installing
 
